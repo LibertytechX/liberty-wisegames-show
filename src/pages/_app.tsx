@@ -14,6 +14,7 @@ import ReactQueryProvider from '@/lib/react-query';
 // import { StreamChatProvider } from "@/lib/stream-chat";
 
 import type { AppProps } from 'next/app';
+import ErrorBoundary from '@/components/ErrorBoundary';
 function MyApp({ Component, pageProps, ...appProps }: AppProps) {
   const { isFullPageOverlayOpen } = useRouteChangeEffects();
 
@@ -59,19 +60,21 @@ function MyApp({ Component, pageProps, ...appProps }: AppProps) {
       : React.Fragment;
 
   return (
-    <ReactQueryProvider>
-      <AuthProvider>
-        <ProtectedRouteGuard protectedRoutes={protectedRoutes}>
-          {/* <StreamChatProvider> */}
-          <LayoutComponent>
-            {isFullPageOverlayOpen && <FullPageOverlay />}
-            <Component {...pageProps} />
-          </LayoutComponent>
-          {/* </StreamChatProvider> */}
-        </ProtectedRouteGuard>
-        <Toaster position="bottom-center" />
-      </AuthProvider>
-    </ReactQueryProvider>
+    <ErrorBoundary>
+      <ReactQueryProvider>
+        <AuthProvider>
+          <ProtectedRouteGuard protectedRoutes={protectedRoutes}>
+            {/* <StreamChatProvider> */}
+            <LayoutComponent>
+              {isFullPageOverlayOpen && <FullPageOverlay />}
+              <Component {...pageProps} />
+            </LayoutComponent>
+            {/* </StreamChatProvider> */}
+          </ProtectedRouteGuard>
+          <Toaster position="bottom-center" />
+        </AuthProvider>
+      </ReactQueryProvider>
+    </ErrorBoundary>
   );
 }
 
