@@ -87,6 +87,14 @@ function initializeSocketServer(server) {
       gameState.players = gameState.players.filter(player => player.id !== socket.id);
       io.emit('playerLeft', gameState.players);
     });
+
+    socket.on('error', error => {
+      console.error('Socket error:', error);
+    });
+  });
+
+  io.on('error', error => {
+    console.error('Socket.IO server error:', error);
   });
 
   return io;

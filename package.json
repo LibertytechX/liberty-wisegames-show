@@ -1,17 +1,11 @@
 {
-  "name": "whisperwise-lotto",
-  "version": "0.1.0",
+"name": "game-show-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "analyze": "cross-env ANALYZE=true next build",
 "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
-    "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "coverage": "jest --coverage",
-    "production": "npm run build && npm run start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.5",
