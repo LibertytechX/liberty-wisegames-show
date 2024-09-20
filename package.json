@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-"dev": "node server.js",
+    "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
@@ -32,11 +32,11 @@
     "lucide-react": "^0.441.0",
     "matter-js": "^0.18.0",
     "nanoid": "^4.0.0",
-    "next": "^13.4.7",
+  "next": "^13.4.7",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "nprogress": "^0.2.0",
     "react-countdown": "^2.3.5",
-    "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.42.1",
     "react-hot-toast": "^2.4.0",
