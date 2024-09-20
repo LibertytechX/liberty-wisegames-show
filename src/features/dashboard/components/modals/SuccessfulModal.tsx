@@ -158,24 +158,24 @@ export const SuccessfulModal: React.FunctionComponent<SucessfulModalProps> = ({
           <Image
             src={'/images/salary-for-life-small.svg'}
             alt=""
-            width="100%"
-            height="100%"
+            width="100"
+            height="100"
             className="h-full !w-20"
           />
 
           <Image
             src={'/images/instant-cashout-small.svg'}
             alt=""
-            width="100%"
-            height="100%"
+            width="100"
+            height="100"
             className="h-full !w-20"
           />
 
           <Image
             src={'/images/wyse-cash-small.svg'}
             alt=""
-            width="100%"
-            height="100%"
+            width="100"
+            height="100"
             className="h-full !w-20"
           />
         </div>
