@@ -73,8 +73,8 @@ export default function PlayerScreen() {
                                 <Image
                                     src={'/images/salary_for_life_small.png'}
                                     alt=""
-                                    width="62.12px"
-                                    height="46px"
+                                    width="62"
+                                    height="46"
                                     className="!w-[62.12px] !h-[46px]"
                                 />
                             </a>
@@ -136,8 +136,8 @@ export default function PlayerScreen() {
                             <Image
                                 src={'/images/salary_for_life_small.png'}
                                 alt=""
-                                width="62.12px"
-                                height="46px"
+                                width="62"
+                                height="46"
                                 className="!w-[62.12px] !h-[46px]"
                             />
                         </a>
