@@ -41,8 +41,8 @@ export const PeoplePlayTable: React.FunctionComponent<GamePlayProps> = ({
               <Image
                 src={'/images/top-winners/salary-4-life.jpg'}
                 alt=""
-                width="32px"
-                height="32px"
+                width="32"
+                height="32"
                 className="h-full rounded-full"
               />
             )}
@@ -51,8 +51,8 @@ export const PeoplePlayTable: React.FunctionComponent<GamePlayProps> = ({
               <Image
                 src={'/images/top-winners/wyse-cash.jpg'}
                 alt=""
-                width="32px"
-                height="32px"
+                width="32"
+                height="32"
                 className="h-full rounded-full"
               />
             )}
@@ -61,8 +61,8 @@ export const PeoplePlayTable: React.FunctionComponent<GamePlayProps> = ({
               <Image
                 src={'/images/top-winners/instant-cash.jpg'}
                 alt=""
-                width="32px"
-                height="32px"
+                width="32"
+                height="32"
                 className="h-full rounded-full"
               />
             )}
@@ -138,7 +138,7 @@ export const PeoplePlayTable: React.FunctionComponent<GamePlayProps> = ({
   ];
 
   return (
-    
+
     <>
       <div className=" mt-[50px] mb-[24px] flex w-full items-center justify-between gap-2 overflow-auto rounded-[10px]  md:gap-10">
         <h2 className="whitespace-nowrap text-white">Game Plays</h2>
