@@ -4,47 +4,50 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import React, { useState, useEffect } from 'react';
-// import { io } from 'socket.io-client';
-import { useSocket } from '@/hooks/useSocket';
+import { io } from 'socket.io-client';
 
 
-// const socket = io();
+const socket = io();
 
 export default function PlayerScreen() {
     const [playerName, setPlayerName] = useState('');
     const [joined, setJoined] = useState(false);
     const [question, setQuestion] = useState('');
     const [answered, setAnswered] = useState(false);
-    const socket = useSocket();
 
     useEffect(() => {
-        if (!socket) return;
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
 
-        const handleGameState = (state: { currentQuestion: string }) => {
+        socket.on('connect_error', (error) => {
+            console.log('Connection error:', error);
+        });
+
+        socket.on('gameState', (state) => {
             console.log('Received game state:', state);
             if (state.currentQuestion) {
                 setQuestion(state.currentQuestion);
                 setAnswered(false);
             }
-        };
+        });
 
-        const handleQuestionSelected = (selectedQuestion: string) => {
+        socket.on('questionSelected', (selectedQuestion) => {
             console.log('Received new question:', selectedQuestion);
             setQuestion(selectedQuestion);
             setAnswered(false);
-        };
-
-        socket.on('gameState', handleGameState);
-        socket.on('questionSelected', handleQuestionSelected);
+        });
 
         return () => {
-            socket.off('gameState', handleGameState);
-            socket.off('questionSelected', handleQuestionSelected);
+            socket.off('connect');
+            socket.off('connect_error');
+            socket.off('gameState');
+            socket.off('questionSelected');
         };
-    }, [socket]);
+    }, []);
 
     const joinGame = () => {
-        if (playerName && socket) {
+        if (playerName) {
             socket.emit('join', playerName);
             setJoined(true);
             console.log('Joined game as:', playerName);
@@ -53,7 +56,7 @@ export default function PlayerScreen() {
     };
 
     const answerQuestion = () => {
-        if (!answered && question && socket) {
+        if (!answered && question) {
             const answerTime = Date.now();
             socket.emit('answer', { playerName, time: answerTime });
             setAnswered(true);

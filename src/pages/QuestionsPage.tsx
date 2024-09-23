@@ -6,23 +6,24 @@ import { Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/form';
-import { useSocket } from '../hooks/useSocket';
 
-const _socket = io();
+const socket = io();
 
 export default function QuestionsPage() {
     const [questions, setQuestions] = useState([]);
     const [newQuestion, setNewQuestion] = useState('');
     const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(-1);
-    const socket = useSocket();
 
     useEffect(() => {
-        if (!socket) return;
-
         const handleFullGameState = (gameState: { questions: React.SetStateAction<never[]>; selectedQuestionIndex: React.SetStateAction<number>; }) => {
             setQuestions(gameState.questions);
             setSelectedQuestionIndex(gameState.selectedQuestionIndex);
         };
+
+        socket.on('connect', () => {
+            console.log('Connected to server');
+            socket.emit('requestGameState');
+        });
 
         socket.on('fullGameState', handleFullGameState);
 
@@ -34,33 +35,28 @@ export default function QuestionsPage() {
             setSelectedQuestionIndex(index);
         });
 
-        socket.emit('requestGameState');
-
         return () => {
+            socket.off('connect');
             socket.off('fullGameState');
             socket.off('updateQuestions');
             socket.off('questionSelected');
         };
-    }, [socket]);
+    }, []);
 
     const addQuestion = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        if (newQuestion.trim() && socket) {
+        if (newQuestion.trim()) {
             socket.emit('addQuestion', newQuestion);
             setNewQuestion('');
         }
     };
 
     const selectQuestion = (index: number) => {
-        if (socket) {
-            socket.emit('selectQuestion', index);
-        }
+        socket.emit('selectQuestion', index);
     };
 
     const deleteQuestion = (index: number) => {
-        if (socket) {
-            socket.emit('deleteQuestion', index);
-        }
+        socket.emit('deleteQuestion', index);
     };
 
     return (

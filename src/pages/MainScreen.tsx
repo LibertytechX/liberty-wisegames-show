@@ -1,14 +1,14 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-// import { io } from 'socket.io-client';
+import { io } from 'socket.io-client';
 import Link from 'next/link';
 // import { ArrowUpDown, Download } from 'lucide-react';
 import Image from 'next/image';
 import { LinkButton } from '@/components/elements';
-import { useSocket } from '../hooks/useSocket';
 
-// const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || '');
+
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || '');
 
 function formatTime(time: number): string {
     const date = new Date(time);
@@ -36,15 +36,18 @@ export default function MainScreen() {
     const [_players, setPlayers] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [sortOrder, _setSortOrder] = useState('asc');
-    const socket = useSocket();
-    useEffect(() => {
-        if (!socket) return;
 
+    useEffect(() => {
         const handleFullGameState = (gameState: { currentQuestion: React.SetStateAction<string>; players: React.SetStateAction<never[]>; answers: React.SetStateAction<never[]>; }) => {
             setQuestion(gameState.currentQuestion);
             setPlayers(gameState.players);
             setAnswers(gameState.answers);
         };
+
+        socket.on('connect', () => {
+            console.log('Connected to server');
+            socket.emit('requestGameState');
+        });
 
         socket.on('fullGameState', handleFullGameState);
 
@@ -69,16 +72,15 @@ export default function MainScreen() {
             setAnswers([]);
         });
 
-        socket.emit('requestGameState');
-
         return () => {
+            socket.off('connect');
             socket.off('fullGameState');
             socket.off('playerJoined');
             socket.off('playerAnswered');
             socket.off('playerLeft');
             socket.off('questionSelected');
         };
-    }, [socket]);
+    }, []);
 
     const sortedAnswers = [...answers].sort((a, b) => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
