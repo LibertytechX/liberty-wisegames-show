@@ -48,7 +48,7 @@ export const LinkButton: React.FunctionComponent<LinkButton> = ({
   return (
     <>
       <Link href={href}>
-        <a
+        <div
           onClick={onClick}
           className={clsx(
             'space-x-2 rounded-lg font-medium transition duration-500 ease-in-out hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-wise-purple-light focus:ring-opacity-30 focus:ring-offset-2 focus:ring-offset-white active:scale-[0.95] disabled:cursor-not-allowed disabled:opacity-70',
@@ -61,7 +61,7 @@ export const LinkButton: React.FunctionComponent<LinkButton> = ({
         >
           {isLoading && <span className="inline-block w-full text-center">Loading</span>}
           {!isLoading && <span className="inline-block w-full text-center">{children}</span>}
-        </a>
+        </div>
       </Link>
 
       <style jsx>{`

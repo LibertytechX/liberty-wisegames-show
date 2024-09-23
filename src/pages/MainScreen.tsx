@@ -20,7 +20,7 @@ function formatTime(time: number): string {
     });
 }
 
-function calculateTimeDifference(startTime: number, endTime: number): string {
+function _calculateTimeDifference(startTime: number, endTime: number): string {
     const diff = endTime - startTime;
     const hours = Math.floor(diff / 3600000);
     const minutes = Math.floor((diff % 3600000) / 60000);
@@ -124,15 +124,15 @@ export default function MainScreen() {
             <div className='flex items-center justify-between gap-5 z-[999999]'>
                 <div className='flex items-center gap-2'>
                     <Link href="#">
-                        <a>
-                            <Image
-                                src={'/images/salary_for_life_small.png'}
-                                alt=""
-                                width="62"
-                                height="46"
-                                className="!w-[62.12px] !h-[46px]"
-                            />
-                        </a>
+
+                        <Image
+                            src={'/images/salary_for_life_small.png'}
+                            alt=""
+                            width="62"
+                            height="46"
+                            className="!w-[62.12px] !h-[46px]"
+                        />
+
                     </Link>
                     <p className='text-[22px] font- max-w-[577px] text-white'>Game show</p>
                 </div>
@@ -192,15 +192,23 @@ export default function MainScreen() {
                                                     //@ts-ignore
                                                     answer.playerName}</p>
                                             </div>
-                                            <div className='text-sm'>Response time: {
+                                            <div className='text-sm'>Time: {
                                                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                                                 //@ts-ignore
                                                 formatTime(answer.time)
-                                            }</div>
-                                            <div className='text-sm'>Time difference: {
-                                                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                                                //@ts-ignore
-                                                index === 0 ? '00:00:00.000' : calculateTimeDifference(answers[0].time, answer.time)}</div>
+
+                                            }
+
+                                            </div>
+                                            <div className='text-sm'>
+                                                {/* // // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                // //@ts-ignore
+                                                // index === 0 ? '00:00:00.000' : calculateTimeDifference(answers[0].time, answer.time)} */}
+
+                                                {
+                                                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                                    //@ts-ignore
+                                                    answer.time - answers[0].time}ms</div>
                                         </li>
                                     ))}
                                 </ul>

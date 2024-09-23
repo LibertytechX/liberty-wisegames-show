@@ -6,7 +6,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || '');
+const socket = io();
 
 export default function PlayerScreen() {
     const [playerName, setPlayerName] = useState('');
@@ -69,15 +69,15 @@ export default function PlayerScreen() {
                 <div className='flex items-center justify-between gap-5 z-[999999]'>
                     <div className='flex items-center gap-2'>
                         <Link href="#">
-                            <a>
-                                <Image
-                                    src={'/images/salary_for_life_small.png'}
-                                    alt=""
-                                    width="62"
-                                    height="46"
-                                    className="!w-[62.12px] !h-[46px]"
-                                />
-                            </a>
+
+                            <Image
+                                src={'/images/salary_for_life_small.png'}
+                                alt=""
+                                width="62"
+                                height="46"
+                                className="!w-[62.12px] !h-[46px]"
+                            />
+
                         </Link>
                         <p className='text-[22px] font-bold text-white'>Game show</p>
                     </div>
@@ -132,15 +132,15 @@ export default function PlayerScreen() {
             <div className='flex items-center justify-between gap-5 z-[999999]'>
                 <div className='flex items-center gap-2'>
                     <Link href="#">
-                        <a>
-                            <Image
-                                src={'/images/salary_for_life_small.png'}
-                                alt=""
-                                width="62"
-                                height="46"
-                                className="!w-[62.12px] !h-[46px]"
-                            />
-                        </a>
+
+                        <Image
+                            src={'/images/salary_for_life_small.png'}
+                            alt=""
+                            width="62"
+                            height="46"
+                            className="!w-[62.12px] !h-[46px]"
+                        />
+
                     </Link>
                     <p className='text-[22px] font-bold text-white'>Game show</p>
                 </div>

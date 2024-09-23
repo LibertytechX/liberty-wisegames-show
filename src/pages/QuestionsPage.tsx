@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/form';
 
-const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || '');
+const socket = io();
 
 export default function QuestionsPage() {
     const [questions, setQuestions] = useState([]);
@@ -64,7 +64,7 @@ export default function QuestionsPage() {
             <div className='flex items-center justify-between gap-5 z-[999999]'>
                 <div className='flex items-center gap-2'>
                     <Link href="#">
-                        <a>
+                 
                             <Image
                                 src={'/images/salary_for_life_small.png'}
                                 alt=""
@@ -72,7 +72,7 @@ export default function QuestionsPage() {
                                 height="46"
                                 className="!w-[62.12px] !h-[46px]"
                             />
-                        </a>
+                  
                     </Link>
                     <p className='text-[22px] font-bold text-white'>Game show</p>
                 </div>
