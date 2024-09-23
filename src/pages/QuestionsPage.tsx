@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/form';
 
-const socket = io();
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || '');
 
 export default function QuestionsPage() {
     const [questions, setQuestions] = useState([]);

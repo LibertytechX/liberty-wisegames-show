@@ -57,9 +57,9 @@ app
       console.error('Socket.IO error:', err);
     });
 
-    server.listen(process.env.PORT || 3000, err => {
+    server.listen(process.env.NEXT_PUBLIC_SOCKET_URL || 3000, err => {
       if (err) throw err;
-      console.log(`> Ready on http://localhost:${process.env.PORT || 3000}`);
+      console.log(`> Ready on http://localhost:${process.env.NEXT_PUBLIC_SOCKET_URL || 3000}`);
     });
   })
   .catch(err => {

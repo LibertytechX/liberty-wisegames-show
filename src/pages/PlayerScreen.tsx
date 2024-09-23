@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 
 
-const socket = io();
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL || '');
 
 export default function PlayerScreen() {
     const [playerName, setPlayerName] = useState('');
