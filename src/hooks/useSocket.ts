@@ -1,29 +1,22 @@
-// hooks/useSocket.ts
 import { useEffect, useState } from 'react';
 
 import io, { Socket } from 'socket.io-client';
+
+const SOCKET_SERVER_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001';
 
 export const useSocket = () => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const socketIo = io(process.env.NEXT_PUBLIC_SOCKET_URL || '', {
-      path: '/api/socket',
+    const newSocket = io(SOCKET_SERVER_URL, {
+      withCredentials: true,
+      transports: ['websocket'],
     });
 
-    // Trigger socket initialization
-    fetch('/api/socket', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({}),
-    });
-
-    setSocket(socketIo);
+    setSocket(newSocket);
 
     return () => {
-      socketIo.disconnect();
+      newSocket.close();
     };
   }, []);
 
