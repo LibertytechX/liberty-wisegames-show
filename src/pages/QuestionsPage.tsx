@@ -6,24 +6,23 @@ import { Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Input } from '@/components/form';
+import { useSocket } from '../hooks/useSocket';
 
-const socket = io();
+const _socket = io();
 
 export default function QuestionsPage() {
     const [questions, setQuestions] = useState([]);
     const [newQuestion, setNewQuestion] = useState('');
     const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(-1);
+    const socket = useSocket();
 
     useEffect(() => {
+        if (!socket) return;
+
         const handleFullGameState = (gameState: { questions: React.SetStateAction<never[]>; selectedQuestionIndex: React.SetStateAction<number>; }) => {
             setQuestions(gameState.questions);
             setSelectedQuestionIndex(gameState.selectedQuestionIndex);
         };
-
-        socket.on('connect', () => {
-            console.log('Connected to server');
-            socket.emit('requestGameState');
-        });
 
         socket.on('fullGameState', handleFullGameState);
 
@@ -35,28 +34,33 @@ export default function QuestionsPage() {
             setSelectedQuestionIndex(index);
         });
 
+        socket.emit('requestGameState');
+
         return () => {
-            socket.off('connect');
             socket.off('fullGameState');
             socket.off('updateQuestions');
             socket.off('questionSelected');
         };
-    }, []);
+    }, [socket]);
 
     const addQuestion = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        if (newQuestion.trim()) {
+        if (newQuestion.trim() && socket) {
             socket.emit('addQuestion', newQuestion);
             setNewQuestion('');
         }
     };
 
     const selectQuestion = (index: number) => {
-        socket.emit('selectQuestion', index);
+        if (socket) {
+            socket.emit('selectQuestion', index);
+        }
     };
 
     const deleteQuestion = (index: number) => {
-        socket.emit('deleteQuestion', index);
+        if (socket) {
+            socket.emit('deleteQuestion', index);
+        }
     };
 
     return (
@@ -64,15 +68,15 @@ export default function QuestionsPage() {
             <div className='flex items-center justify-between gap-5 z-[999999]'>
                 <div className='flex items-center gap-2'>
                     <Link href="#">
-                 
-                            <Image
-                                src={'/images/salary_for_life_small.png'}
-                                alt=""
-                                width="62"
-                                height="46"
-                                className="!w-[62.12px] !h-[46px]"
-                            />
-                  
+
+                        <Image
+                            src={'/images/salary_for_life_small.png'}
+                            alt=""
+                            width="62"
+                            height="46"
+                            className="!w-[62.12px] !h-[46px]"
+                        />
+
                     </Link>
                     <p className='text-[22px] font-bold text-white'>Game show</p>
                 </div>
