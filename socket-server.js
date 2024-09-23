@@ -15,6 +15,8 @@ function initializeSocketServer(server) {
     cors: {
       origin: '*',
       methods: ['GET', 'POST'],
+      allowedHeaders: ['Accept', 'Authorization', 'Content-Type', 'Origin', 'X-Requested-With'],
+      credentials: true,
     },
   });
 
