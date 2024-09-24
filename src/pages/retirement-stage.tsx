@@ -45,10 +45,12 @@ const questions: Question[] = [
   {
     id: 1,
     text: "Mary's mother has four children: April, May, June, and ____?",
+        correctAnswer: 2
   },
   {
     id: 2,
     text: "Which country is home to the Eiffel Tower?",
+        correctAnswer: 2
   },
    {
     id: 3,
