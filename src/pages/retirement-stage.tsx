@@ -44,178 +44,132 @@ type GameState = {
 const questions: Question[] = [
   {
     id: 1,
-    text: "What is the square root of 225?",
-    options: ["10", "15", "14", "25"],
-    correctAnswer: 1
+    text: "Mary's mother has four children: April, May, June, and ____?",
   },
   {
     id: 2,
-    text: "Complete the analogy: Hot is to Cold as Day is to ____?",
-    options: ["Light", "Night", "Dark", "Warm"],
-    correctAnswer: 1
+    text: "Which country is home to the Eiffel Tower?",
   },
    {
     id: 3,
-    text: "What is 15% of 1500?",
-    options: ["250", "175", "225", "275"],
+    text: "If you rearrange the letters 'L I S T E N', you would have the name of a:?",
     correctAnswer: 2
   },
    {
     id: 4,
-    text: "Which of the following is a synonym for 'exquisite'?",
-    options: ["Ugly", "Beautiful", "Average", "Rough"],
+    text: "What is the currency of Canada?",
     correctAnswer: 1
   },
      {
     id: 5,
-    text: "A movie theatre has 25 rows of seats with 20 seats in each row. How many seats are there in total?",
-    options: ["450", "500", "750", "550"],
+    text: "Which number comes next in the series: 1, 3, 5, 7, 11, 13 ____?",
     correctAnswer: 1
   },
      {
     id: 6,
-    text: "Which country is the largest producer of coffee in the world?",
-    options: ["Switzerland", "Nigeria", "Brazil", "Italy"],
+    text: "Which planet is known as the Earth's twin?",
     correctAnswer: 2
   },
      {
     id: 7,
-    text: "Simplify: 15 - (4 + 3 x 2) = ?",
-    options: ["5", "7", "8", "9"],
+    text: "What is the next letter in the series: A, C, F, J, ____?",
     correctAnswer: 0
   },
      {
     id: 8,
-    text: "Which Nigerian state is the largest by landmass?",
-    options: ["Taraba (54,473 square kilometers)", "Niger (74,363 square kilometers)", "Kaduna (46,053 square kilometers)", "Borno (70,898 square kilometers)"],
+    text: "Which country has the largest population in the world?",
     correctAnswer: 1
   },
        {
     id: 9,
-    text: "What is the value of π (Pi) to two decimal places?",
-    options: ["3.12", "3.14", "3.16", "3.18"],
+    text: "If you divide 30 by half and add 10, what do you get?",
     correctAnswer: 1
   },
        {
     id: 10,
-    text: "What is the oldest active volcano in the world?",
-    options: ["Mount Vesuvius", "Mt. Unzen", "Mauna Loa", "Mount Fuji"],
+    text: "Which is the highest mountain in the world?",
     correctAnswer: 1
   },
        {
     id: 11,
-    text: "Calculate: 8 x 4 + 12 = ?",
-    options: ["66", "128", "44", "84"],
+    text: " If it takes 5 machines 5 minutes to make 5 gadgets, how long would it take 100 machines to make 100 gadgets?",
     correctAnswer: 2
   },
        {
     id: 12,
-    text: "Which country is Nigeria's largest trading partner?",
-    options: ["United States", "United Kingdom", "China", "Taiwan"],
+    text: "In which year did World War II end?",
     correctAnswer: 2
   },
          {
     id: 13,
-    text: "Which number is not a prime number?",
-    options: ["11", "17", "19", "21"],
+    text: "What is the next prime number after 23?",
     correctAnswer: 3
   },
            {
     id: 14,
-    text: "The more you take, the more you leave behind. What am I?",
-    options: ["Thoughts", "Footsteps", "Memories", "Time"],
+    text: "Which scientist is known for the theory of relativity?",
     correctAnswer: 1
   },
            {
     id: 15,
-    text: "If the area of a square is 128 square meters, what is the length of one side?",
-    options: ["24 meters", "32 meters", "16 meters", "28 meters"],
+    text: "If a red house is made of red bricks, and a blue house is made of blue bricks, what is a greenhouse made of?",
     correctAnswer: 1
   },
            {
     id: 16,
-    text: "What is 15% of 400?",
-    options: ["100", "75", "40", "60"],
+    text: "What is the official language of Brazil?",
     correctAnswer: 3
   },
            {
     id: 17,
-    text: "Which of the following is an adverb?",
-    options: ["Quick", "Quickly", "Quickest", "Quicker"],
+    text: "Which two colors combine to make purple?",
     correctAnswer: 1
   },
              {
     id: 18,
-    text: "What is “x” in the equation: 12x + 8 = 80",
-    options: ["10", "5", "6", "7"],
+    text: "Which continent is the Sahara Desert located on?",
     correctAnswer: 2
   },
                {
     id: 19,
-    text: "Which word correctly completes the sentence: The hunter with the dog,____coming",
-    options: ["are", "is", "has", "were"],
+    text: "If a rooster lays an egg on a roof, which way will it roll?",
     correctAnswer: 1
   },
                {
     id: 20,
-    text: "What is the sum of the angles in a triangle?",
-    options: ["90 degrees", "120 degrees", "180 degrees", "360 degrees"],
+    text: "What is the capital of Italy?",
     correctAnswer: 2
   },
                {
     id: 21,
-    text: "Fill in the gap - His wife and comforter _____ arrived",
-    options: ["have", "has", "are", "were"],
+    text: "What is the smallest prime number?",
     correctAnswer: 1
   },
                {
     id: 22,
-    text: "What is the decimal equivalent of 1/8?",
-    options: ["0.5", "0.25", "0.75", "0.125"],
+    text: "Which planet is closest to the sun?",
     correctAnswer: 3
   },
                {
     id: 23,
-    text: "Who was the first female speaker of the Nigerian House of Representatives?",
-    options: ["Stella Oduah", " Patricia Etteh", "Ngozi Okonjo-Iweala", "Grace Folashade Bent"],
+    text: "Which number comes next in the series: 2, 6, 12, 20, ____?",
     correctAnswer: 1
   },
               {
     id: 24,
-    text: "What is the product of 7 and 8?",
-    options: ["48", "54", "56", "64"],
+    text: "Which country is known as the 'Land of the Free'?",
     correctAnswer: 2
   },
               {
     id: 25,
-    text: "What is the comparative form of 'happy?'",
-    options: ["Happier", "Happied", "Most happy", "Happiest"],
+    text: "Who invented the World Wide Web, and in which year was it first proposed?",
     correctAnswer: 0
   },
               {
     id: 26,
-    text: "What is the perimeter of a rectangle with length 8m and width 4m?",
-    options: ["16 meters", "24 meters", "32 meters", "40 meters"],
-    correctAnswer: 1
-  },
-              {
-    id: 27,
-    text: "What is the synonym of 'rapid'?",
-    options: ["Slow", "Fast", "Lazy", "Quiet"],
-    correctAnswer: 1
-  },
-              {
-    id: 28,
-    text: "If a train travels 60 kilometers in 1 hour, how far will it travel in 3 hours, 30 minutes?",
-    options: ["180 kilometers", "210 kilometers", "240 kilometers", "300 kilometers"],
-    correctAnswer: 1
-  },
-              {
-    id: 29,
-    text: "Which word is a noun?",
-    options: ["Run", "Beautiful", "Happiness", "Quickly"],
-    correctAnswer: 2
-  },
+    text: "Who was the first Nigerian to become a Senior Advocate of Nigeria (SAN)?",
+    correctAnswer: 0
+  }
 
   
   // ... add more questions here
@@ -246,104 +200,32 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
     '- Answer questions win everyone is a winner . ₦20,000.00)',
     '- Answer questions win omoo otilo!!. ₦20,000.00)',
   ];
-  const [gameState, setGameState] = React.useState<GameState>(() => {
-    if (typeof window !== 'undefined') {
-      const savedState = localStorage.getItem('millionaireGameState')
-      return savedState ? JSON.parse(savedState) : {
-        currentQuestionIndex: 0,
-        answers: [],
-        score: 0
-      }
+ const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
+  const [selectedAnswer, setSelectedAnswer] = React.useState<number | null>(null);
+
+  const handleAnswer = (answerId: number) => {
+    setSelectedAnswer(answerId);
+  };
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+      setSelectedAnswer(null);
+    } else {
+      alert("Quiz completed!");
+      setCurrentQuestionIndex(0);
+      setSelectedAnswer(null);
     }
-    return {
-      currentQuestionIndex: 0,
-      answers: [],
-      score: 0
-    }
-  })
-  const [gameStartTime, setGameStartTime] = React.useState(Date.now())
-  const [isAnswered, setIsAnswered] = React.useState(false)
+  };
 
-  React.useEffect(() => {
-    setGameStartTime(Date.now())
-  }, [gameState.currentQuestionIndex])
-
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('millionaireGameState', JSON.stringify(gameState))
-    }
-  }, [gameState])
-
-  const calculateScore = React.useCallback((isCorrect: boolean, time: number) => {
-    const baseScore = isCorrect ? 1000 : 0
-    const timeBonus = Math.max(0, 10000 - time) // Max 10 seconds for full time bonus
-    return baseScore + Math.floor(timeBonus / 100)
-  }, [])
-
-  const handleAnswer = React.useCallback((answerId: number) => {
-    if (isAnswered) return
-
-    const currentQuestion = questions[gameState.currentQuestionIndex]
-    if (!currentQuestion) return
-
-    const isCorrect = answerId === currentQuestion.correctAnswer
-    const answerTime = Date.now() - gameStartTime
-
-    // Play sound effect
-    if (isCorrect && correctSound) {
-      correctSound.play().catch(e => console.error("Error playing sound:", e))
-    } else if (!isCorrect && incorrectSound) {
-      incorrectSound.play().catch(e => console.error("Error playing sound:", e))
-    }
-
-    const newAnswer: Answer = {
-      questionId: currentQuestion.id,
-      answerId,
-      user: "Player 1", // In a real app, you'd get this from authentication
-      time: answerTime,
-      isCorrect
-    }
-
-    const newScore = gameState.score + calculateScore(isCorrect, answerTime)
-
-    setGameState(prevState => ({
-      ...prevState,
-      answers: [...prevState.answers, newAnswer],
-      score: newScore
-    }))
-    setIsAnswered(true)
-
-    // Move to next question after a delay
-    setTimeout(() => {
-      if (gameState.currentQuestionIndex < questions.length - 1) {
-        setGameState(prevState => ({
-          ...prevState,
-          currentQuestionIndex: prevState.currentQuestionIndex + 1
-        }))
-        setIsAnswered(false)
-      } else {
-        alert(`Game Over! Your final score is ${newScore}. Check console for results.`)
-        console.log("Final Answers:", gameState.answers)
-        // Reset game state
-        setGameState({
-          currentQuestionIndex: 0,
-          answers: [],
-          score: 0
-        })
-      }
-    }, 2000)
-  }, [gameState, gameStartTime, isAnswered, calculateScore])
-
-  const currentQuestion = questions[gameState.currentQuestionIndex]
+  const currentQuestion = questions[currentQuestionIndex];
 
   if (!currentQuestion) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
-
 
   return (
     <div className="ask__ai__bg min-h-[100vh]">
-
       <NotificationModal
         headingText={errorModalMessage}
         label={errorModalMessage}
@@ -378,68 +260,38 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
               Whyze Games
             </span>
           </button>
-
-
         </div>
         <div className="flex flex-col items-center justify-center bg-[#00041068] text-white p-4 rounded-xl border border-[#00E2C6] h-[600px] mt-16">
           <div className="w-full max-w-2xl bg-blue-900 rounded-lg p-6 shadow-lg">
             <h2 className="text-2xl mb-4">{currentQuestion.text}</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
               {currentQuestion.options.map((option, index) => (
-                <motion.div
+                <Button
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
+                  onClick={() => handleAnswer(index)}
+                  className={`w-full justify-start text-left ${
+                    selectedAnswer === index
+                      ? 'bg-green-500 hover:bg-green-600'
+                      : 'bg-blue-700 hover:bg-blue-600'
+                  }`}
                 >
-                  <button
-                    className={`w-full p-4 text-lg space-x-2 rounded-lg transition duration-500 ease-in-out hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-wise-purple-light focus:ring-opacity-30 focus:ring-offset-2 focus:ring-offset-white active:scale-[0.95] disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-60 ${isAnswered && index === currentQuestion.correctAnswer
-                      ? "bg-green-500"
-                      : isAnswered && gameState.answers[gameState.answers.length - 1]?.answerId === index
-                        ? "bg-red-500"
-                        : "bg-blue-700 hover:bg-blue-600"
-                      }`}
-                    onClick={() => handleAnswer(index)}
-                    disabled={isAnswered}
-                  >
-                    {option}
-                  </button>
-                </motion.div>
+                  {option}
+                </Button>
               ))}
             </div>
-            <div className="mt-4 text-xl">
-              Score: {gameState.score}
+            <div className="mt-4 flex justify-between items-center">
+              <div className="text-lg">Question {currentQuestionIndex + 1} of {questions.length}</div>
+              <Button
+                onClick={handleNextQuestion}
+                className="bg-green-500 hover:bg-green-600"
+              >
+                Next Question
+              </Button>
             </div>
           </div>
         </div>
-        {/* 
-        <div className="mt-10 w-[350px] lg:hidden">
-          <Image
-            alt="right side image"
-            src={'/images/ask-ai-by-glo/landingpage_mobile.svg'}
-            width={500}
-            height={500}
-            quality={100}
-            className="relative object-contain"
-            sizes="100vw"
-            //
-          />
-        </div> */}
-
-        {/* <div className="relative left-5 mt-12 min-w-[300px] lg:hidden">
-          <Image
-            src={'/images/ask-ai-by-glo/landing_page_mobile.png'}
-            alt="mobile image"
-            width={300}
-            height={500}
-            layout="responsive"
-            sizes="100vw"
-          />
-        </div> */}
-
       </section>
       <div className="fixed bottom-0 ">
-        {' '}
         <MarqueeContainer phoneNumberList={phoneNumberList} />
       </div>
     </div>
@@ -447,7 +299,3 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
 };
 
 export default AskAI;
-
-{
-  /*  */
-}
