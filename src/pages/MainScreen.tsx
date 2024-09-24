@@ -138,7 +138,7 @@ export default function MainScreen() {
                     <p className='text-[22px] font- max-w-[577px] text-white'>Game show</p>
                 </div>
 
-                <LinkButton variant='white' href="/QuestionsPage" className="px-4 py-2 !bg-white text-[#242424] whitespace-nowrap rounded">
+                <LinkButton variant='white' href="/QuestionsPage" className="px-4 py-2 !bg-white text-[#242424] whitespace-nowrap hidden rounded">
                     Manage Questions
                 </LinkButton>
             </div>
@@ -164,7 +164,7 @@ export default function MainScreen() {
                             </defs>
                         </svg>
                         <div className="game_round-bg  h-[303px] flex flex-col justify-between items-center pt-24 -mt-28">
-                            <p className="text-2xl text-center text-white font-bold max-w-[477px] truncate">{question || 'No question selected'}</p>
+                            <p className="text-2xl text-center text-white font-bold max-w-[377px] flex flex-wrap">{question || 'No question selected'}</p>
                         </div>
                     </div>
 
