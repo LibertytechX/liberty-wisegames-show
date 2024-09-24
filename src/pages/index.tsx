@@ -217,7 +217,7 @@ const questions: Question[] = [
     correctAnswer: 2
   },
 
-  
+
   // ... add more questions here
 ]
 
@@ -407,12 +407,12 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
                 </motion.div>
               ))}
             </div>
-            <div className="mt-4 text-xl">
+            <div className="mt-4 text-xl hidden">
               Score: {gameState.score}
             </div>
           </div>
         </div>
-        {/* 
+        {/*
         <div className="mt-10 w-[350px] lg:hidden">
           <Image
             alt="right side image"
