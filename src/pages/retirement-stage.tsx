@@ -1,8 +1,8 @@
 // import { useRouter } from 'next/router';
 import * as React from 'react';
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
-import { NotificationModal } from '@/components/elements';
+import { Button, NotificationModal } from '@/components/elements';
 import { useNotificationModalControl } from '@/hooks';
 
 import { MarqueeContainer } from '@/features/ask_ai_by_glo/component';
@@ -33,7 +33,7 @@ type Answer = {
   isCorrect: boolean;
 }
 
-type GameState = {
+type _GameState = {
   currentQuestionIndex: number;
   answers: Answer[];
   score: number;
@@ -44,141 +44,141 @@ const questions: Question[] = [
   {
     id: 1,
     text: "Mary's mother has four children: April, May, June, and ____?",
-        correctAnswer: 2
+        answer: "2"
   },
   {
     id: 2,
     text: "Which country is home to the Eiffel Tower?",
-        correctAnswer: 2
+        answer: "2"
   },
    {
     id: 3,
     text: "If you rearrange the letters 'L I S T E N', you would have the name of a:?",
-    correctAnswer: 2
+    answer: "2"
   },
    {
     id: 4,
     text: "What is the currency of Canada?",
-    correctAnswer: 1
+    answer: "2"
   },
      {
     id: 5,
     text: "Which number comes next in the series: 1, 3, 5, 7, 11, 13 ____?",
-    correctAnswer: 1
+    answer: "2"
   },
      {
     id: 6,
     text: "Which planet is known as the Earth's twin?",
-    correctAnswer: 2
+    answer: "2"
   },
      {
     id: 7,
     text: "What is the next letter in the series: A, C, F, J, ____?",
-    correctAnswer: 0
+    answer: "2"
   },
      {
     id: 8,
     text: "Which country has the largest population in the world?",
-    correctAnswer: 1
+    answer: "2"
   },
        {
     id: 9,
     text: "If you divide 30 by half and add 10, what do you get?",
-    correctAnswer: 1
+    answer: "2"
   },
        {
     id: 10,
     text: "Which is the highest mountain in the world?",
-    correctAnswer: 1
+    answer: "2"
   },
        {
     id: 11,
     text: " If it takes 5 machines 5 minutes to make 5 gadgets, how long would it take 100 machines to make 100 gadgets?",
-    correctAnswer: 2
+    answer: "2"
   },
        {
     id: 12,
     text: "In which year did World War II end?",
-    correctAnswer: 2
+    answer: "2"
   },
          {
     id: 13,
     text: "What is the next prime number after 23?",
-    correctAnswer: 3
+    answer: "2"
   },
            {
     id: 14,
     text: "Which scientist is known for the theory of relativity?",
-    correctAnswer: 1
+    answer: "2"
   },
            {
     id: 15,
     text: "If a red house is made of red bricks, and a blue house is made of blue bricks, what is a greenhouse made of?",
-    correctAnswer: 1
+    answer: "2"
   },
            {
     id: 16,
     text: "What is the official language of Brazil?",
-    correctAnswer: 3
+    answer: "2"
   },
            {
     id: 17,
     text: "Which two colors combine to make purple?",
-    correctAnswer: 1
+    answer: "2"
   },
              {
     id: 18,
     text: "Which continent is the Sahara Desert located on?",
-    correctAnswer: 2
+    answer: "2"
   },
                {
     id: 19,
     text: "If a rooster lays an egg on a roof, which way will it roll?",
-    correctAnswer: 1
+    answer: "2"
   },
                {
     id: 20,
     text: "What is the capital of Italy?",
-    correctAnswer: 2
+    answer: "2"
   },
                {
     id: 21,
     text: "What is the smallest prime number?",
-    correctAnswer: 1
+    answer: "2"
   },
                {
     id: 22,
     text: "Which planet is closest to the sun?",
-    correctAnswer: 3
+    answer: "2"
   },
                {
     id: 23,
     text: "Which number comes next in the series: 2, 6, 12, 20, ____?",
-    correctAnswer: 1
+    answer: "2"
   },
               {
     id: 24,
     text: "Which country is known as the 'Land of the Free'?",
-    correctAnswer: 2
+    answer: "2"
   },
               {
     id: 25,
     text: "Who invented the World Wide Web, and in which year was it first proposed?",
-    correctAnswer: 0
+    answer: "2"
   },
               {
     id: 26,
     text: "Who was the first Nigerian to become a Senior Advocate of Nigeria (SAN)?",
-    correctAnswer: 0
+    answer: "2"
   }
 
-  
+
   // ... add more questions here
 ]
 
 // Sound effects
-const correctSound = typeof Audio !== 'undefined' ? new Audio('/correct.mp3') : null
-const incorrectSound = typeof Audio !== 'undefined' ? new Audio('/incorrect.mp3') : null
+const _correctSound = typeof Audio !== 'undefined' ? new Audio('/correct.mp3') : null
+const _incorrectSound = typeof Audio !== 'undefined' ? new Audio('/incorrect.mp3') : null
 
 
 
