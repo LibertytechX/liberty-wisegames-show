@@ -253,7 +253,7 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
   ];
   const [gameState, setGameState] = React.useState<GameState>(() => {
     if (typeof window !== 'undefined') {
-      const savedState = localStorage.getItem('millionaireGameState')
+      const savedState = localStorage.getItem('millionaireghghGameState')
       return savedState ? JSON.parse(savedState) : {
         currentQuestionIndex: 0,
         answers: [],
