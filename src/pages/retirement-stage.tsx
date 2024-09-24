@@ -22,7 +22,7 @@ interface WebsiteHeaderProps {
 type Question = {
   id: number;
   text: string;
-  correctAnswer: number;
+  answer: string;
 }
 
 type Answer = {
@@ -201,21 +201,21 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
     '- Answer questions win everyone is a winner . ₦20,000.00)',
     '- Answer questions win omoo otilo!!. ₦20,000.00)',
   ];
- const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
-  const [selectedAnswer, setSelectedAnswer] = React.useState<number | null>(null);
+const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
+  const [showAnswer, setShowAnswer] = React.useState(false);
 
-  const handleAnswer = (answerId: number) => {
-    setSelectedAnswer(answerId);
-  };
-
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-      setSelectedAnswer(null);
+  const handleNext = () => {
+    if (showAnswer) {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+        setShowAnswer(false);
+      } else {
+        alert("Quiz completed!");
+        setCurrentQuestionIndex(0);
+        setShowAnswer(false);
+      }
     } else {
-      alert("Quiz completed!");
-      setCurrentQuestionIndex(0);
-      setSelectedAnswer(null);
+      setShowAnswer(true);
     }
   };
 
@@ -265,34 +265,25 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
         <div className="flex flex-col items-center justify-center bg-[#00041068] text-white p-4 rounded-xl border border-[#00E2C6] h-[600px] mt-16">
           <div className="w-full max-w-2xl bg-blue-900 rounded-lg p-6 shadow-lg">
             <h2 className="text-2xl mb-4">{currentQuestion.text}</h2>
-            <div className="space-y-2">
-              {currentQuestion.options.map((option, index) => (
-                <Button
-                  key={index}
-                  onClick={() => handleAnswer(index)}
-                  className={`w-full justify-start text-left ${
-                    selectedAnswer === index
-                      ? 'bg-green-500 hover:bg-green-600'
-                      : 'bg-blue-700 hover:bg-blue-600'
-                  }`}
-                >
-                  {option}
-                </Button>
-              ))}
-            </div>
-            <div className="mt-4 flex justify-between items-center">
+            {showAnswer && (
+              <div className="mt-4 p-4 bg-green-600 rounded-lg">
+                <h3 className="text-xl font-semibold mb-2">Answer:</h3>
+                <p>{currentQuestion.answer}</p>
+              </div>
+            )}
+            <div className="mt-6 flex justify-between items-center">
               <div className="text-lg">Question {currentQuestionIndex + 1} of {questions.length}</div>
               <Button
-                onClick={handleNextQuestion}
+                onClick={handleNext}
                 className="bg-green-500 hover:bg-green-600"
               >
-                Next Question
+                {showAnswer ? 'Next Question' : 'Show Answer'}
               </Button>
             </div>
           </div>
         </div>
       </section>
-      <div className="fixed bottom-0 ">
+      <div className="fixed bottom-0 w-full">
         <MarqueeContainer phoneNumberList={phoneNumberList} />
       </div>
     </div>
