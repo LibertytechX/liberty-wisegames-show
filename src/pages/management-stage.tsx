@@ -44,180 +44,185 @@ type GameState = {
 const questions: Question[] = [
   {
     id: 1,
-    text: "What is the square root of 225?",
-    options: ["10", "15", "14", "25"],
-    correctAnswer: 1
+    text: "Which country is the largest by land area?",
+    options: ["Canada", "China", "Russia", "United States"],
+    correctAnswer: 2
   },
   {
     id: 2,
-    text: "Complete the analogy: Hot is to Cold as Day is to ____?",
-    options: ["Light", "Night", "Dark", "Warm"],
-    correctAnswer: 1
+    text: 'What is the atomic number of carbon?',
+    options: ['6', "8", "12", "16"],
+    correctAnswer: 0
   },
    {
     id: 3,
-    text: "What is 15% of 1500?",
-    options: ["250", "175", "225", "275"],
-    correctAnswer: 2
+    text: "In which year did the United Nations come into existence?",
+    options: ["1919", "1945", "1950", "1960"],
+    correctAnswer: 1
   },
    {
     id: 4,
-    text: "Which of the following is a synonym for 'exquisite'?",
-    options: ["Ugly", "Beautiful", "Average", "Rough"],
-    correctAnswer: 1
+    text: "What is the powerhouse of the cell?",
+    options: ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"],
+    correctAnswer: 0
   },
      {
     id: 5,
-    text: "A movie theatre has 25 rows of seats with 20 seats in each row. How many seats are there in total?",
-    options: ["450", "500", "750", "550"],
-    correctAnswer: 1
-  },
-     {
-    id: 6,
-    text: "Which country is the largest producer of coffee in the world?",
-    options: ["Switzerland", "Nigeria", "Brazil", "Italy"],
+    text: "Which of the following words is spelt correctly?",
+    options: ["Gonorhea", "Gonnoreah", "Gonorrhea", "Gonoraeh"],
     correctAnswer: 2
   },
      {
+    id: 6,
+    text: "What is the chemical formula for glucose?",
+    options: ["C6H12O6", "H2O", "CO2", "C2H5OH"],
+    correctAnswer: 0
+  },
+     {
     id: 7,
-    text: "Simplify: 15 - (4 + 3 x 2) = ?",
-    options: ["5", "7", "8", "9"],
+    text: "Which continent is the Largest by Land area?",
+    options: ["Asia", "Africa", "Europe", "South America"],
     correctAnswer: 0
   },
      {
     id: 8,
-    text: "Which Nigerian state is the largest by landmass?",
-    options: ["Taraba (54,473 square kilometers)", "Niger (74,363 square kilometers)", "Kaduna (46,053 square kilometers)", "Borno (70,898 square kilometers)"],
+    text: "Which arm of government is responsible for implementing laws and policies?",
+    options: ["Judiciary", "Executive", "Legislatures", " Local Government"],
     correctAnswer: 1
   },
        {
     id: 9,
-    text: "What is the value of π (Pi) to two decimal places?",
-    options: ["3.12", "3.14", "3.16", "3.18"],
-    correctAnswer: 1
+    text: "Who is the current Prime Minister of the United Kingdom?",
+    options: ["Theresa May", "David Cameron", " Sir Keir Starmer", "Boris Johnson"],
+    correctAnswer: 2
   },
        {
     id: 10,
-    text: "What is the oldest active volcano in the world?",
-    options: ["Mount Vesuvius", "Mt. Unzen", "Mauna Loa", "Mount Fuji"],
+    text: "What is the chemical symbol for gold?",
+    options: ["G", "Au", "ag", "Pt"],
     correctAnswer: 1
   },
        {
     id: 11,
-    text: "Calculate: 8 x 4 + 12 = ?",
-    options: ["66", "128", "44", "84"],
-    correctAnswer: 2
+    text: " A company's net income is N5,000,000, and its total revenue is N20,000,000. What is its net profit margin?",
+    options: ["30%", "25%", "150%", "100%"],
+    correctAnswer: 1
   },
-       {
+ {
     id: 12,
-    text: "Which country is Nigeria's largest trading partner?",
-    options: ["United States", "United Kingdom", "China", "Taiwan"],
-    correctAnswer: 2
+    text: " What type of bond is formed between two hydrogen atoms in a hydrogen molecule (H2)",
+    options: ["Ionic Bond", "Covalent Bond", "Hydrogen Bond", " Metallic Bond"],
+    correctAnswer: 1
   },
-         {
+{
     id: 13,
-    text: "Which number is not a prime number?",
-    options: ["11", "17", "19", "21"],
-    correctAnswer: 3
+    text: " Which African country was never colonized?",
+    options: ["Nigeria", "Ethiopia", "Ghana", " South Africa"],
+    correctAnswer: 1
   },
-           {
+{
     id: 14,
-    text: "The more you take, the more you leave behind. What am I?",
-    options: ["Thoughts", "Footsteps", "Memories", "Time"],
-    correctAnswer: 1
+    text: " A company has 500 employees, and 30% of them are managers. How many managers are there?",
+    options: ["130", "165", "150", " 145"],
+    correctAnswer: 2
   },
-           {
+{
     id: 15,
-    text: "If the area of a square is 128 square meters, what is the length of one side?",
-    options: ["24 meters", "32 meters", "16 meters", "28 meters"],
+    text: " How many Governors does the Constitution of Nigeria recognize?",
+    options: ["36", "37", "35", " 38"],
     correctAnswer: 1
   },
-           {
+{
     id: 16,
-    text: "What is 15% of 400?",
-    options: ["100", "75", "40", "60"],
-    correctAnswer: 3
+    text: " Which planet in our solar system is known for having rings?",
+    options: ["Jupiter", "Saturn", "Uranus", " Neptune"],
+    correctAnswer: 1
   },
-           {
+{
     id: 17,
-    text: "Which of the following is an adverb?",
-    options: ["Quick", "Quickly", "Quickest", "Quicker"],
+    text: "  What is the main currency used in Japan?",
+    options: ["Dollar", "Yen", "Won", " Yuan"],
     correctAnswer: 1
   },
-             {
+{
     id: 18,
-    text: "What is “x” in the equation: 12x + 8 = 80",
-    options: ["10", "5", "6", "7"],
+    text: "What is the SI unit of electric current?",
+    options: ["Volt", "Watt", "Ampere", "Ohm"],
     correctAnswer: 2
   },
-               {
+{
     id: 19,
-    text: "Which word correctly completes the sentence: The hunter with the dog,____coming",
-    options: ["are", "is", "has", "were"],
+    text: "Which country hosted the first FIFA World Cup in 2010?",
+    options: ["Brazil", "South Africa ", "France", "Nigeria"],
     correctAnswer: 1
   },
-               {
+{
     id: 20,
-    text: "What is the sum of the angles in a triangle?",
-    options: ["90 degrees", "120 degrees", "180 degrees", "360 degrees"],
-    correctAnswer: 2
-  },
-               {
-    id: 21,
-    text: "Fill in the gap - His wife and comforter _____ arrived",
-    options: ["have", "has", "are", "were"],
+    text:" What is the most abundant element in the Earth's crust?",
+    options: ["Iron", "Oxygen", "Silicon", "Aluminum"],
     correctAnswer: 1
   },
-               {
-    id: 22,
-    text: "What is the decimal equivalent of 1/8?",
-    options: ["0.5", "0.25", "0.75", "0.125"],
+{
+    id: 21,
+    text:" Which ocean is the largest in the world?",
+    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
     correctAnswer: 3
   },
-               {
-    id: 23,
-    text: "Who was the first female speaker of the Nigerian House of Representatives?",
-    options: ["Stella Oduah", " Patricia Etteh", "Ngozi Okonjo-Iweala", "Grace Folashade Bent"],
+{
+    id: 22,
+    text: "What is the synonym of the word Periphrastic?",
+    options: ["Consise", "Circular", "Comprehension", "Ardent"],
     correctAnswer: 1
   },
-              {
+{
+    id: 23,
+    text: "Which country has the most spoken languages?",
+    options: ["India", "Papua", "China", "Nigeria"],
+    correctAnswer: 1
+  },
+{
     id: 24,
-    text: "What is the product of 7 and 8?",
-    options: ["48", "54", "56", "64"],
+    text: "What is the basic unit of life?",
+    options: ["Molecule", "Atom", "Cell", "Tissue"],
     correctAnswer: 2
   },
-              {
+{
     id: 25,
-    text: "What is the comparative form of 'happy?'",
-    options: ["Happier", "Happied", "Most happy", "Happiest"],
+    text: "Who was Nigeria’s Senate President in 2006?",
+    options: [" Ken Nnamani", "David Mark", "Yakubu Dogara", " Bukola Saraki"],
     correctAnswer: 0
   },
-              {
+{
     id: 26,
-    text: "What is the perimeter of a rectangle with length 8m and width 4m?",
-    options: ["16 meters", "24 meters", "32 meters", "40 meters"],
-    correctAnswer: 1
+    text: "Who was the Speaker of the Federal house of Representative in 2014?",
+    options: ["Aminu Tambuwal", "Femi Gbajabiamila", "Adolphus Wabara", " Aminu Masar"],
+    correctAnswer: 0
   },
-              {
+{
     id: 27,
-    text: "What is the synonym of 'rapid'?",
-    options: ["Slow", "Fast", "Lazy", "Quiet"],
+    text: "Which country is known as the 'Land of the Rising Sun'?",
+    options: ["China", "Japan", "South Korea", " India"],
     correctAnswer: 1
   },
-              {
+{
     id: 28,
-    text: "If a train travels 60 kilometers in 1 hour, how far will it travel in 3 hours, 30 minutes?",
-    options: ["180 kilometers", "210 kilometers", "240 kilometers", "300 kilometers"],
+    text: "What is the second largest planet in our solar system?",
+    options: ["Mars", "Saturn", "Uranus", " Neptune"],
     correctAnswer: 1
   },
-              {
+{
     id: 29,
-    text: "Which word is a noun?",
-    options: ["Run", "Beautiful", "Happiness", "Quickly"],
-    correctAnswer: 2
+    text: "Which continent is known as the cradle of civilization?",
+    options: ["Europe", "Asia", "Africa", " South America"],
+    correctAnswer: 1
   },
+{
+    id: 30,
+    text: "Which is the smallest planet in our solar system?",
+    options: ["Earth", "Mercury", "Mars", " Venus"],
+    correctAnswer: 1
+  }
 
-  
   // ... add more questions here
 ]
 
@@ -412,7 +417,7 @@ const AskAI: React.FunctionComponent<WebsiteHeaderProps> = () => {
             </div>
           </div>
         </div>
-        {/* 
+        {/*
         <div className="mt-10 w-[350px] lg:hidden">
           <Image
             alt="right side image"
